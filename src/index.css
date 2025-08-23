@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-overlay-bg: #0c0a09;
+  --color-overlay-text: rgb(245, 245, 245);
+  --color-link-hover-color: rgb(254, 215, 170);
+  --color-spreadsheets-bg: rgb(234, 224, 213);
+  --color-spreadsheets-bg-hover: rgb(193, 185, 179);
+}

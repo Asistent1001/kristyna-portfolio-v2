@@ -1,0 +1,17 @@
+{
+  "sizeHeader": "RÁM",
+  "sizeSubheader": "VELIKOST",
+  "photoSubheader": "VHODNÉ FOTO",
+  "printSubheader": "TISK",
+  "sizeTitle": "Tabulka velikostí",
+  "sizeInfo": "Rám Vaši fotografii nechá vyniknout. Obsahuje křídově bílou paspartu, která vytváří mezi rámem a snímkem vizuálně odlehčenou část. Proto je rám vždy o jeden velikostní formát větší než Váš výtisk fotografie.",
+  "deliveryTitle": "Doprava a platba",
+  "deliveryInfoSpan": "DOPRAVA",
+  "deliveryInfoMain": "Objednávka je připravena k předání obvykle do 14 dnů od zpracování.",
+  "deliveryPersonalPickupSpan": "Osobní vyzvednutí: ",
+  "deliveryPersonalPickup": "zdarma",
+  "deliveryPostSpan": "Zásilkovna: ",
+  "deliveryPost": "od 79,- (cena se orientuje dle velikosti zásilky)",
+  "paymentInfoSpan": "PLATBA",
+  "paymentInfoMain": "Objednávku lze uhradit hotovostně při převzetí nebo bezhotovostně QR platbou"
+}

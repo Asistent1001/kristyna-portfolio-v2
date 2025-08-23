@@ -1,0 +1,17 @@
+{
+  "sizeHeader": "FRAME",
+  "sizeSubheader": "SIZE",
+  "photoSubheader": "SUITABLE PHOTO",
+  "printSubheader": "PRINT",
+  "sizeTitle": "Size Chart",
+  "sizeInfo": "The frame will make your photograph stand out. It contains a chalk-white mat that creates a visually lightened space between the frame and the photo. Therefore, the frame is always one size larger than your photo print.",
+  "deliveryTitle": "Shipping and Payment",
+  "deliveryInfoSpan": "SHIPPING",
+  "deliveryInfoMain": "The order is usually ready for pickup within 14 days of processing.",
+  "deliveryPersonalPickupSpan": "Personal Pickup: ",
+  "deliveryPersonalPickup": "free",
+  "deliveryPostSpan": "Parcel Locker (Zásilkovna): ",
+  "deliveryPost": "from 79 CZK (price is based on the shipment size)",
+  "paymentInfoSpan": "PAYMENT",
+  "paymentInfoMain": "The order can be paid in cash upon pickup or by cashless QR payment"
+}

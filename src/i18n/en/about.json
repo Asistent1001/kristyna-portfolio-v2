@@ -1,0 +1,46 @@
+{
+  "about": {
+    "heading": "ABOUT ME",
+    "partText": "A graduate of multimedia creation",
+    "text": " — a diverse focus where you will find many of my works created originally and with love. My creations include photography, 2D and 3D design, video, and more. My greatest passion is photography, which has accompanied me since childhood. I also devote myself to drawing, I enjoy watching movies, and I have always wanted to learn how a film and its promotional creation are made."
+  },
+  "skills": {
+    "heading": "SKILLS AND HOBBIES",
+    "partText": "I have experience with graphic programs: Adobe Photoshop, Adobe Illustrator, Premiere Pro, and Cinema 4D.",
+    "text": "My goal in any project is to refine every detail and care about the result. I always try to see things through to the end, and my hobbies include playing beach volleyball, reading, watching movies, and spending time in nature and with animals."
+  },
+  "goals": {
+    "heading": "OBJECTIVES",
+    "text": "I would like to work in the field of multimedia creation and achieve a position, for example, in the film, advertising, or graphic agency industry. I would like to gain new experience that will help me move forward in this field and, in the future, expand my skills in the direction of 2D and 3D graphics, filming, design, or animation."
+  },
+  "awards": {
+    "awardedPhoto": "Awarded photo in {{contest}}",
+    "heading": "PARTICIPATION AND AWARDS",
+    "decagon": {
+      "category": "International Photography Competition",
+      "position": "Selection in category: Bizarre and Unusual"
+    },
+    "urban": {
+      "category": "International Photography Competition",
+      "position": "Winner in category \"Youth Award\" - Wildlife in the city"
+    },
+    "openHouse": {
+      "category": "Photography Competition (CZ)",
+      "position": "3rd place in category People: city and accessibility"
+    },
+    "picture": {
+      "category": "International Photography Competition",
+      "position": "Ranked among Top 10 winners in category Places"
+    },
+    "dit4ll": {
+      "category": "International Student Competition",
+      "position": "Co-participation"
+    }
+  },
+  "courses": {
+    "heading": "Educational and Instructional Courses",
+    "workcamp": {
+      "location": "Portugal"
+    }
+  }
+}

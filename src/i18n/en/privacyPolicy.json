@@ -1,0 +1,45 @@
+{
+  "heading": "Privacy Policy",
+  "text": "Kristýna Koubková is committed to protecting your personal data. This Privacy Policy explains what data we collect through this website, how we handle it, and what your rights are. The processing of personal data complies with the General Data Protection Regulation (GDPR) and other applicable regulations.",
+  "email": "Email: kristyna04@post.cz",
+  "toSave": {
+    "heading": "1. What Data Do We Collect?",
+    "name": "First and last name.",
+    "email": "Email address.",
+    "message": "Content of the message sent via the contact form."
+  },
+  "usage": {
+    "heading": "2. How Do We Use Your Data?",
+    "text": "We use your data solely to process your inquiry or message sent through the contact form. The processing is based on your consent, which you provide by submitting the form. You may withdraw this consent at any time."
+  },
+  "retention": {
+    "heading": "3. Data Retention",
+    "text": "We do not store your data on our servers. We use the EmailJS service to send messages, which retains data for 30 days for active accounts and deletes data immediately upon account termination. For more details on EmailJS’s data retention policies, please visit "
+  },
+  "sharing": {
+    "heading": "4. Data Sharing",
+    "text": "Your data is not shared with any third parties. We use the EmailJS service to send messages, which acts as a data processor and ensures data security in accordance with applicable regulations. More information about EmailJS’s data protection practices can be found at "
+  },
+  "rights": {
+    "heading": "5. Your Rights",
+    "access": "Access your personal data",
+    "correction": "Request its correction or deletion",
+    "restriction": "Restrict its processing",
+    "portability": "Data portability",
+    "objection": "Object to its processing",
+    "complaint": "Lodge a complaint with a supervisory authority",
+    "contact": "To exercise these rights, please contact us at: kristyna04@post.cz."
+  },
+  "security": {
+    "heading": "6. Data Security",
+    "text": "We implement appropriate technical and organizational measures to protect your personal data. Data transmitted through the EmailJS service is protected by encryption (SSL/TLS)."
+  },
+  "changes": {
+    "heading": "7. Changes to This Policy",
+    "text": "This Privacy Policy may be updated from time to time. Changes take effect immediately upon their publication on this website. We will inform you of any changes via this website."
+  },
+  "contact": {
+    "heading": "8. Contact",
+    "text": "If you have any questions regarding the processing of your personal data, please contact us."
+  }
+}

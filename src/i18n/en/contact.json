@@ -1,0 +1,22 @@
+{
+  "heading": "Contact Me",
+  "phone": "Phone: +420 601 373 536",
+  "email": "Email: kristyna04@post.cz",
+  "location": "Prague, Czech Republic",
+  "text": "The phone number above is personal. If you are contacting me for the first time, please leave an SMS or WhatsApp message. Thank you.",
+  "form": {
+    "heading": "Contact Form",
+    "sender": "Full Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "submit": "Send",
+    "options": {
+      "selectSubject": "Select subject",
+      "photography": "Photography",
+      "calendar": "Calendar",
+      "customProduction": "Custom Production",
+      "other": "Other"
+    }
+  }
+}

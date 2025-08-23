@@ -1,0 +1,983 @@
+
+
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Link, NavLink } from "react-router-dom";
+
+import BurgerIcon from "../utils/BurgerIcon.jsx";
+import ChangeLanguageButton from "../utils/ChangeLanguageButton.jsx";
+
+const navigationHeader = [
+  { key: "home", path: "/" },
+  { key: "about", path: "/about" },
+  { key: "portfolio", path: "/portfolio" },
+  { key: "forSale", path: "/distribution" },
+  { key: "events", path: "/events" },
+  { key: "contact", path: "/contact" },
+];
+
+export default function Header() {
+  const { t } = useTranslation("header");
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (menuOpen && window.innerWidth < 768) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [menuOpen]);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  return (
+    <header className="fixed w-full top-0 left-0 bg-overlay-bg text-overlay-text z-900 py-4 lg:py-6 px-4 sm:px-6 md:px-9 lg:px-12 flex flex-col gap-0">
+      <section className="flex flex-row justify-between items-center">
+        <Link
+          className={
+            "transition-all duration-400 text-lg sm:text-xl md:text-3xl xl:text-4xl"
+          }
+          to={"/"}
+        >
+          Kristýna Koubková
+        </Link>
+        <div className={"flex flex-row gap-3 items-center justify-center"}>
+          <div>
+            <ChangeLanguageButton />
+          </div>
+          <div
+            className={
+              "h-4 w-4 box-content relative md:hidden flex flex-row items-center justify-center"
+            }
+            onClick={toggleMenu}
+          >
+            <BurgerIcon isOpen={menuOpen} />
+          </div>
+        </div>
+      </section>
+      <section
+        className={`top-14 fixed inset-0 bg-overlay-bg transition-all duration-400 ease-in-out ${
+          menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        } md:static md:opacity-100 md:visible md:flex`}
+      >
+        <nav className={"select-none"}>
+          <ul
+            className={"flex flex-col pt-4 md:flex md:flex-row gap-4 md:gap-8"}
+          >
+            {navigationHeader.map((item, index) => {
+              return (
+                <li className={""} key={index} onClick={toggleMenu}>
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) =>
+                      `flex justify-center text-xl md:text-base ${isActive ? "" : ""}`
+                    }
+                  >
+                    {({ isActive }) => (
+                      <span
+                        className={`border-b border-transparent hover:text-link-hover-color hover:border-b-link-hover-color active:text-link-hover-color active:border-b-link-hover-color transition-all duration-200 ease-in-out ${isActive ? "border-b-link-hover-color text-link-hover-color " : "border-transparent text-overlay-text"}`}
+                      >
+                        {t(item.key)}
+                      </span>
+                    )}
+                  </NavLink>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </section>
+    </header>
+  );
+}
+
+import i18n from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+import { initReactI18next } from "react-i18next";
+import SocialMediaItemsList from "../utils/SocialMediaItemsList";
+
+const year = new Date().getFullYear();
+
+export default function Footer() {
+  const { t } = useTranslation("footer");
+  return (
+    <footer
+      className={
+        "bg-overlay-bg flex flex-col justify-center px-4 py-4 lg:py-6 sm:px-6 md:px-9 lg:px-12 gap-10 sm:gap-8"
+      }
+    >
+      <section
+        className={
+          "text-lg flex flex-row justify-between items-center text-overlay-text"
+        }
+      >
+        <Link
+          className={
+            "text-base transition-all duration-400 border-b border-b-transparent hover:text-link-hover-color hover:border-b-link-hover-color active:text-link-hover-color active:border-b-link-hover-color"
+          }
+          to={"/contact"}
+        >
+          {t("contact")}
+        </Link>
+        <SocialMediaItemsList />
+      </section>
+      <section className={"text-overlay-text flex flex-col gap-3 items-center"}>
+        <Link
+          className={
+            "text-xs sm:text-sm hover:text-link-hover-color transition-all duration-400 border-b border-b-transparent hover:border-b-link-hover-color active:text-link-hover-color active:border-b-link-hover-color"
+          }
+          to={"/privacyPolicy"}
+        >
+          {t("gdpr")}
+        </Link>
+        <p className={"text-xs sm:text-sm"}>
+          © {year} {t("owner")}
+        </p>
+      </section>
+    </footer>
+  );
+}
+export default function SocialMediaItem({ link, media, className }) {
+  return (
+    <a
+      className={className}
+      target="_blank"
+      rel="noopener noreferrer"
+      href={link}
+    >
+      {media}
+    </a>
+  );
+}
+export default function YoutubeIcon({ className }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 30 30"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        id="Youtube"
+        d="M28.9,8.025a3.63,3.63,0,0,0-2.555-2.556C24.077,4.848,15,4.848,15,4.848s-9.078,0-11.347.6A3.707,3.707,0,0,0,1.1,8.025,38.293,38.293,0,0,0,.5,15a38.15,38.15,0,0,0,.6,6.975,3.634,3.634,0,0,0,2.556,2.556c2.293.621,11.347.621,11.347.621s9.077,0,11.347-.6A3.634,3.634,0,0,0,28.9,22a38.293,38.293,0,0,0,.6-6.975A36.3,36.3,0,0,0,28.9,8.025ZM12.11,19.348v-8.7L19.658,15Z"
+      />
+    </svg>
+  );
+}
+
+import csAbout from "./i18n/cs/about.json";
+import csContact from "./i18n/cs/contact.json";
+import csEvents from "./i18n/cs/events.json";
+import csFooter from "./i18n/cs/footer.json";
+import csForSale from "./i18n/cs/forSale.json";
+import csHeader from "./i18n/cs/header.json";
+import csHome from "./i18n/cs/home.json";
+import csPortfolio from "./i18n/cs/portfolio.json";
+import csPrivacyPolicy from "./i18n/cs/privacyPolicy.json";
+import csUtils from "./i18n/cs/utils.json";
+
+import { Route, Routes } from "react-router-dom";
+import enAbout from "./i18n/en/about.json";
+import enContact from "./i18n/en/contact.json";
+import enEvents from "./i18n/en/events.json";
+import enFooter from "./i18n/en/footer.json";
+import enForSale from "./i18n/en/forSale.json";
+import enHeader from "./i18n/en/header.json";
+import enHome from "./i18n/en/home.json";
+import enPortfolio from "./i18n/en/portfolio.json";
+import enPrivacyPolicy from "./i18n/en/privacyPolicy.json";
+import enUtils from "./i18n/en/utils.json";
+
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources: {
+      en: {
+        header: enHeader,
+        home: enHome,
+        about: enAbout,
+        contact: enContact,
+        events: enEvents,
+        footer: enFooter,
+        utils: enUtils,
+        privacyPolicy: enPrivacyPolicy,
+        portfolio: enPortfolio,
+        forSale: enForSale,
+      },
+      cs: {
+        header: csHeader,
+        home: csHome,
+        about: csAbout,
+        contact: csContact,
+        events: csEvents,
+        footer: csFooter,
+        utils: csUtils,
+        privacyPolicy: csPrivacyPolicy,
+        portfolio: csPortfolio,
+        forSale: csForSale,
+      },
+    },
+    ns: [
+      "header",
+      "home",
+      "about",
+      "contact",
+      "events",
+      "footer",
+      "utils",
+      "privacyPolicy",
+      "portfolio",
+      "forSale",
+    ],
+    fallbackLng: "en",
+    supportedLngs: ["en", "cs"],
+    interpolation: {
+      escapeValue: false,
+    },
+    detection: {
+      order: ["localStorage", "navigator"],
+      caches: ["localStorage"],
+    },
+  });
+
+export default i18n;
+
+import About from "./About.jsx";
+import Contact from "./Contact.jsx";
+import EventPage from "./Events/EventPage.jsx";
+import Events from "./Events/Events.jsx";
+import ForSale from "./ForSale.jsx";
+import Home from "./Home.jsx";
+import Portfolio from "./Portfolio.jsx";
+import PrivacyPolicy from "./PrivacyPolicy.jsx";
+
+export default function Main() {
+  return (
+    <main className="pt-[4.75rem] sm:pt-[5rem] md:pt-[7.813rem] lg:pt-[8.813rem] flex-grow">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/distribution" element={<ForSale />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/events/:eventId" element={<EventPage />} />
+        <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+      </Routes>
+    </main>
+  );
+}
+// @ts-ignore
+import mainPhoto from "../assets/Home/home_1.jpg";
+
+export default function Home() {
+  const { t } = useTranslation("home");
+  const countries = ["cz", "pt", "es", "lv", "gr", "is", "it"];
+  return (
+    <>
+      <section className="relative h-56 md:h-72 overflow-hidden">
+        <div className="absolute top-1/2 transform -translate-y-1/2 left-[5%] z-150">
+          <p className={"font-semibold text-overlay-text text-xl md:text-2xl"}>
+            {t("greet")}
+          </p>
+          <Link
+            to={"/portfolio"}
+            className={"text-stone-200 text-sm md:text-base"}
+          >
+            {t("forSale")}
+          </Link>
+        </div>
+        <div className="h-full relative before:absolute before:content-[''] before:bg-overlay-bg/20 before:z-50 before:inset-0">
+          <img
+            className="h-full w-full object-cover object-center "
+            src={mainPhoto}
+            alt="Photographer photo"
+          />
+        </div>
+      </section>
+      <section>
+        <div
+          className={
+            "flex flex-col justify-center items-center gap-4 py-5 text-center bg-overlay-bg text-overlay-text"
+          }
+        >
+          <h1 className={"text-2xl font-bold"}>{t("specialisation")}</h1>
+          <p className={"text-xs sm:text-sm md:text-base p-3"}>{t("info")}</p>
+
+          <Link
+            className={"bg-stone-50 text-stone-950 rounded-md text-sm p-4"}
+            to={"/portfolio"}
+          >
+            {t("creationLink")}
+          </Link>
+        </div>
+      </section>
+      <section
+        className={
+          "py-10 relative text-overlay-text flex flex-col justify-center bg-fixed bg-cover items-center bg-[url('/src/assets/Home/home_2.jpg')]"
+        }
+      >
+        <div className={"absolute inset-0 bg-overlay-bg/60 z-10"}></div>
+        <h1 className={"text-2xl font-bold z-50"}>{t("locationHeading")}</h1>
+        <h2 className={"text-base font-semibold z-50 pb-8"}>{t("location")}</h2>
+        <ul
+          className={
+            "text-base font-normal z-50 text-center flex flex-col gap-1"
+          }
+        >
+          {countries.map((item, index) => {
+            return <li key={index}>{t(item)}</li>;
+          })}
+        </ul>
+      </section>
+    </>
+  );
+}
+
+import {
+  buttonImagesKeysToRender,
+  categoryListToExport,
+} from "../utils/imagesData";
+
+import emailjs from "emailjs-com";
+import InstagramIcon from "../Footer/InstagramIcon";
+import SocialMediaItem from "../Footer/SocialMediaItem";
+import TwisisIcon from "../Footer/TwisisIcon";
+import YoutubeIcon from "../Footer/YoutubeIcon";
+import Category from "./Category";
+
+export default function Portfolio() {
+  const { t } = useTranslation("portfolio");
+  const [chosenCategory, setChosenCategory] = useState(null);
+
+  return (
+    <section className="flex flex-col">
+      {!chosenCategory ? (
+        categoryListToExport.map((item, index) => {
+          return (
+            <button
+              className="relative"
+              onClick={() => setChosenCategory(item)}
+              key={index}
+            >
+              <span className="absolute top-1/2 -translate-y-1/2 left-1/48 font-semibold text-2xl bg-amber-500">
+                {t(item)}
+              </span>
+              <div className="h-80">
+                <img
+                  className="w-full h-full object-cover"
+                  src={buttonImagesKeysToRender[item]}
+                  alt={item}
+                />
+              </div>
+            </button>
+          );
+        })
+      ) : (
+        <Category
+          categoryName={chosenCategory}
+          setChosenCategory={setChosenCategory}
+        />
+      )}
+    </section>
+  );
+}
+
+const itemStyle = "w-full h-full fill-current transition-all duration-300";
+
+const socialMediaLinks = [
+  "https://campsite.to/twisis.studio",
+  "https://www.youtube.com/@KikiKoubkova",
+  "https://www.instagram.com/kiki.koubkova_photographer/",
+];
+
+const socialMediaItemsList = [
+  <TwisisIcon
+    className={itemStyle + " hover:text-[#75005d] active:text-[#75005d]"}
+  />,
+  <YoutubeIcon
+    className={itemStyle + " hover:text-[#ff0033] active:text-[#ff0033]"}
+  />,
+  <InstagramIcon
+    className={itemStyle + " hover:text-[#e424a7] active:text-[#e424a7]"}
+  />,
+];
+
+export default function SocialMediaItemsList() {
+  return (
+    <div className={"flex gap-3 items-stretch"}>
+      {socialMediaLinks.map((link, index) => (
+        <SocialMediaItem
+          key={index}
+          link={link}
+          className={`block h-6 md:h-12 ${index === 0 ? ` w-40 md:w-52 transform -translate-y-0.5` : ` w-7 md:w-10`} text-overlay-text`}
+          media={socialMediaItemsList[index]}
+        />
+      ))}
+    </div>
+  );
+}
+
+
+export default function Contact() {
+  const { t } = useTranslation("contact");
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_fm2oork",
+        "template_69jwgc9",
+        e.target,
+        "Wq6dWnpl78q_XzKndi"
+      )
+      .then(
+        (result) => {
+          alert("Message sent successfully!");
+          console.log(result.text);
+        },
+        (error) => {
+          alert("An error occurred. Please try again later.");
+          console.log(error.text);
+        }
+      );
+  };
+
+  return (
+    <article className="flex flex-col gap-3 md:flex-row rounded-2xl overflow-hidden shadow-2xl my-4 mg:py-6 mx-4 sm:mx-6 md:mx-9 lg:mx-12">
+      <section className="bg-overlay-bg ">
+        <div
+          className={
+            "text-overlay-text text-lg flex flex-col gap-8 p-8 items-start"
+          }
+        >
+          <div>
+            <h1 className={"text-3xl pb-3"}>{t("heading")}</h1>
+            <h4 className={"text-stone-400 border-none text-sm"}>
+              {t("location")}
+            </h4>
+          </div>
+          <div className="flex flex-col">
+            <a href="tel:+420601373536">{t("phone")}</a>
+            <a href="mailto:kristyna04@post.cz">{t("email")}</a>
+          </div>
+          <p className={"text-sm text-stone-400 max-w-96"}>{t("text")}</p>
+
+          <SocialMediaItemsList />
+        </div>
+      </section>
+      <section className={"flex flex-col rounded-2xl p-5 md:w-2/3"}>
+        <h2 className={"text-xl pb-3 md:text-2xl"}>{t("form.heading")}</h2>
+        <form className={"flex flex-col gap-5"} onSubmit={handleSubmit}>
+          <label className={"flex flex-col gap-2 text-lg md:text-xl"}>
+            {t("form.sender")}
+            <input
+              className={"bg-stone-200 rounded-md p-2 text-lg"}
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </label>
+
+          <label className={"flex flex-col gap-2 text-lg md:text-xl"}>
+            {t("form.email")}
+            <input
+              className={"bg-stone-200 rounded-md p-2 text-lg"}
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </label>
+
+          <label className={"flex flex-col gap-2 text-lg md:text-xl"}>
+            {t("form.subject")}
+            <select
+              className={"bg-stone-200 rounded-md p-2 text-lg"}
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+            >
+              <option value="" disabled hidden>
+                {t("form.options.selectSubject")}
+              </option>
+              <option value="Fotografie">
+                {t("form.options.photography")}
+              </option>
+              <option value="Kalendář">{t("form.options.calendar")}</option>
+              <option value="Zakázková výroba">
+                {t("form.options.customProduction")}
+              </option>
+              <option value="Jiný">{t("form.options.other")}</option>
+            </select>
+          </label>
+
+          <label className={"flex flex-col gap-2 text-lg md:text-xl"}>
+            {t("form.message")}
+            <textarea
+              className={"bg-stone-200 rounded-md p-2 text-lg resize-none h-32"}
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
+          </label>
+          <button
+            className="bg-stone-950 text-amber-50 rounded-md py-2 px-6 text-2xl my-8
+             transition duration-300 ease-in-out
+             hover:bg-amber-50 hover:text-stone-950 hover:shadow-lg hover:scale-101"
+            type="submit"
+          >
+            {t("form.submit")}
+          </button>
+        </form>
+      </section>
+    </article>
+  );
+}
+
+// @ts-ignore
+import aboutPortrait from "../assets/About/about_1.png";
+
+import { nominations } from "../utils/Nominations.jsx";
+import { NominationItem } from "./NominationItem.jsx";
+
+import { useSwipeable } from "react-swipeable";
+import decagonGallery from "../assets/Contests/contest_decagon_gallery.jpg";
+import dit4llErasmus from "../assets/Contests/contest_dit4ll_erasmus+.jpg";
+import pictureAward from "../assets/Contests/contest_picture_award.jpg";
+import urbanTreasures from "../assets/Contests/contest_urban_treasures.jpg";
+import ArrowIcon from "../utils/ArrowIcon";
+import { courses } from "../utils/Courses.jsx";
+import { CourseItem } from "./CourseItem.jsx";
+
+export default function About() {
+  const { t } = useTranslation("about");
+  return (
+    <div className="bg-overlay-bg px-4 sm:px-6 md:px-9 py-4 lg:px-12">
+      <section
+        className={
+          "flex flex-col bg-overlay-bg text-overlay-text gap-8 lg:flex-row"
+        }
+      >
+        <div className={"flex flex-col gap-3 "}>
+          <div className={"flex flex-col gap-5"}>
+            <h1 className={"text-[1.625rem] font-semibold"}>
+              {t("about.heading")}
+            </h1>
+            <p className={"pl-3 pr-8"}>
+              <span className={"text-lg text-stone-400"}>
+                {t("about.partText")}
+              </span>
+              {t("about.text")}
+            </p>
+          </div>
+          <div className={"flex flex-col gap-2 pt-4"}>
+            <h1 className={"text-xl font-semibold"}>{t("skills.heading")}</h1>
+            <div className={"pl-3 pr-8"}>
+              <p>{t("skills.text")}</p>
+              <p className={"pt-3"}>{t("skills.partText")}</p>
+            </div>
+          </div>
+          <div className={"flex flex-col gap-2 pt-4"}>
+            <h1 className={"text-xl font-semibold"}>{t("goals.heading")}</h1>
+            <p className={"pl-3 pr-8"}>{t("goals.text")}</p>
+          </div>
+        </div>
+        <div
+          className={"flex flex-col items-center justify-center lg:min-w-80 "}
+        >
+          <img
+            className={"rounded-2xl"}
+            src={aboutPortrait}
+            alt="aboutPortrait"
+          />
+        </div>
+      </section>
+      <section className={"flex flex-col lg:flex-row"}>
+        <div
+          className={
+            "flex flex-col bg-overlay-bg text-overlay-text p-5 gap-8 lg:w-1/2"
+          }
+        >
+          <h1 className={"text-[1.625rem] font-semibold"}>
+            {t("awards.heading")}
+          </h1>
+          <ul className={"flex flex-col gap-3"}>
+            {nominations.map((nom, index) => {
+              return <NominationItem key={index} {...nom} />;
+            })}
+          </ul>
+        </div>
+        <div
+          className={
+            "flex flex-col bg-overlay-bg text-overlay-text p-5 gap-8 lg:w-1/2"
+          }
+        >
+          <h1 className={"text-[1.625rem] font-semibold"}>
+            {t("courses.heading")}
+          </h1>
+          <ul className={"flex flex-col gap-3"}>
+            {courses.map((cour, index) => {
+              return <CourseItem key={index} {...cour} />;
+            })}
+          </ul>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default function Carousel({
+  hidden,
+  images,
+  selectedPhoto,
+  setHidden,
+  setSelectedPhoto,
+}) {
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
+      setSelectedPhoto((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    },
+    onSwipedRight: () => {
+      setSelectedPhoto((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    },
+    trackMouse: true,
+    preventScrollOnSwipe: true,
+  });
+
+  if (hidden) return null;
+
+  return (
+    <div
+      className="z-1000 fixed inset-0 bg-black flex items-center justify-center px-4 sm:px-6 md:px-9 lg:px-12"
+      style={{ touchAction: "none" }}
+      onClick={() => setHidden(true)} // клик по фону закрывает карусель
+    >
+      {/* Карусельный контент: картинка + стрелки */}
+      <h1 className="fixed top-[5%] sm:top-[3%] text-overlay-text">
+        {images[selectedPhoto].name}
+      </h1>
+      <img
+        {...handlers}
+        onClick={(e) => e.stopPropagation()} // клик по картинке не закрывает
+        src={images[selectedPhoto ?? 0].path}
+        alt={images[selectedPhoto].name}
+        className="max-w-full max-h-[80vh] object-contain"
+        loading="lazy"
+      />
+
+      {/* Стрелки под фото на мобильных */}
+      <div className="fixed bottom-6 left-0 w-full flex justify-center gap-8 md:hidden px-4 sm:px-6">
+        <button
+          className="w-12 h-12"
+          onClick={(e) => {
+            e.stopPropagation();
+            setSelectedPhoto((prev) =>
+              prev === 0 ? images.length - 1 : prev - 1
+            );
+          }}
+        >
+          <ArrowIcon className="rotate-90" />
+        </button>
+        <button
+          className="w-12 h-12"
+          onClick={(e) => {
+            e.stopPropagation();
+            setSelectedPhoto((prev) =>
+              prev === images.length - 1 ? 0 : prev + 1
+            );
+          }}
+        >
+          <ArrowIcon className="-rotate-90" />
+        </button>
+      </div>
+
+      {/* Стрелки слева и справа на md и выше */}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          setSelectedPhoto((prev) =>
+            prev === 0 ? images.length - 1 : prev - 1
+          );
+        }}
+        className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-2 sm:left-4 md:left-6 lg:left-8 w-12 h-12"
+      >
+        <ArrowIcon className="rotate-90" />
+      </button>
+
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          setSelectedPhoto((prev) =>
+            prev === images.length - 1 ? 0 : prev + 1
+          );
+        }}
+        className="hidden md:flex absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 md:right-6 lg:right-8 w-12 h-12"
+      >
+        <ArrowIcon className="-rotate-90" />
+      </button>
+    </div>
+  );
+}
+
+export default function LocalizedDate({ dateString }) {
+  const { i18n } = useTranslation();
+  const localeMap = {
+    cs: "cs-CZ",
+    en: "en-US",
+  };
+
+  const date = new Date(dateString);
+  const locale = localeMap[i18n.language] || "en-US";
+  const formatted = new Intl.DateTimeFormat(locale, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(date);
+
+  return <div className="text-sm">{formatted}</div>;
+}
+
+const awardsKeys = ["decagon", "urban", "openHouse", "picture", "dit4ll"];
+
+const contests = [
+  "Decagon Gallery",
+  "Urban Treasures",
+  "OpenHouse Praha",
+  "Picture Award",
+  "Dit4ll Erasmus+",
+];
+
+const photos = [
+  decagonGallery,
+  urbanTreasures,
+  null,
+  pictureAward,
+  dit4llErasmus,
+];
+
+const years = [2025, 2024, 2024, 2023, 2023];
+
+export const nominations = awardsKeys.map((key, index) => ({
+  contest: contests[index],
+  photo: photos[index],
+  year: years[index],
+  category: `awards.${key}.category`,
+  position: `awards.${key}.position`,
+}));
+
+export default function PopupFilter({
+  text,
+  isOpen,
+  setIsOpen,
+  listToShow,
+  setFilter,
+  currentFilter,
+}) {
+  const { t } = useTranslation("forSale");
+
+  const setFilters = (filter) => {
+    if (filter === "nonSelected" || filter === "recommend") {
+      setFilter(null);
+    } else setFilter(filter);
+  };
+
+  return (
+    <div
+      onClick={(e) => {
+        e.stopPropagation();
+        setIsOpen();
+      }}
+      className="relative select-none bg-overlay-bg text-overlay-text rounded-xl p-2"
+    >
+      <div className="flex flex-row items-end gap-1.5 text-sm sm:text-base">
+        <div>{t(text + "Heading")}</div>
+        <div
+          className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-x-180" : ""}`}
+        >
+          <ArrowIcon className="text-overlay-text" />
+        </div>
+      </div>
+      <div className="text-xs sm:text-sm">
+        {t(
+          !currentFilter
+            ? text === "color"
+              ? "recommend"
+              : "nonSelected"
+            : currentFilter
+        )}
+      </div>
+      <ul
+        className={`absolute w-full rounded-xl overflow-hidden left-0 top-full transition-all duration-200 z-20 ease-out ${isOpen ? "opacity-100 translate-y-0.5" : " opacity-0 -translate-y-3 pointer-events-none"}`}
+      >
+        {listToShow.map((item, index) => {
+          return (
+            <li
+              onClick={() => setFilters(item)}
+              className={`p-2 sm:p-3 flex flex-row justify-between shadow-2xl bg-overlay-bg overflow-hidden hover:bg-overlay-text hover:text-overlay-bg ${
+                !currentFilter &&
+                (item === "recommend" || item === "nonSelected")
+                  ? " bg-stone-300 text-overlay-bg"
+                  : currentFilter === item && " bg-stone-300 text-overlay-bg"
+              }`}
+              key={index}
+            >
+              <span className="text-sm sm:text-base">{t(item)}</span>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
+// @ts-ignore
+
+export default function PopupList({ text, isOpen, setIsOpen, listToShow }) {
+  const { t } = useTranslation("forSale");
+
+  return (
+    <div
+      onClick={(e) => {
+        e.stopPropagation();
+        setIsOpen();
+      }}
+      className="relative select-none"
+    >
+      <div className="flex flex-row items-center justify-between gap-2 border p-1">
+        <span className="mr-2">{t(text)}</span>
+        <div
+          className={`h-4 w-4 transition-transform duration-300  ${isOpen ? "rotate-x-180" : ""}`}
+        >
+          <ArrowIcon className="text-stone-500" />
+        </div>
+      </div>
+      <ul
+        className={`absolute w-full bg-stone-50 shadow-2xl left-0 top-full transition-all duration-200 z-20 ease-out ${isOpen ? "opacity-100 translate-y-0" : " opacity-0 -translate-y-3 pointer-events-none"}`}
+      >
+        {Object.entries(listToShow).map(([item, value], index) => {
+          return (
+            <li
+              className="border-b flex flex-row justify-between p-2"
+              key={index}
+            >
+              <span className="font-semibold">{item}</span>
+              {value}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
+const itemStyle = "w-full h-full fill-current transition-all duration-300";
+
+const socialMediaLinks = [
+  "https://campsite.to/twisis.studio",
+  "https://www.youtube.com/@KikiKoubkova",
+  "https://www.instagram.com/kiki.koubkova_photographer/",
+];
+
+const socialMediaItemsList = [
+  <TwisisIcon
+    className={itemStyle + " hover:text-[#75005d] active:text-[#75005d]"}
+  />,
+  <YoutubeIcon
+    className={itemStyle + " hover:text-[#ff0033] active:text-[#ff0033]"}
+  />,
+  <InstagramIcon
+    className={itemStyle + " hover:text-[#e424a7] active:text-[#e424a7]"}
+  />,
+];
+
+export default function SocialMediaItemsList() {
+  return (
+    <div className={"flex gap-3 items-stretch"}>
+      {socialMediaLinks.map((link, index) => (
+        <SocialMediaItem
+          key={index}
+          link={link}
+          className={`block h-6 md:h-12 ${index === 0 ? ` w-40 md:w-52 transform -translate-y-0.5` : ` w-7 md:w-10`} text-overlay-text`}
+          media={socialMediaItemsList[index]}
+        />
+      ))}
+    </div>
+  );
+}
+
+
+// <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+//   {sortedImages.map((currentObject, index) => {
+//     return (
+//       <div
+//         className="w-full h-full flex flex-col items-center justify-center p-3"
+//         onClick={() => currentChoose(index)}
+//         key={index + currentObject.price + currentObject.name}
+//       >
+//         <div className="border p-3 flex flex-col items-center">
+//           <span>{currentObject.name}</span>
+//           <div className="">
+//             <img
+//               className="object-cover w-full h-full"
+//               src={currentObject.path}
+//               alt={currentObject.name}
+//               loading="lazy"
+//             />
+//           </div>
+//           <span>{currentObject.price} Kč</span>
+//         </div>
+//       </div>
+//     );
+//   })}
+// </div>;
+
+// <div className="grid auto-rows-auto grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
+//   {sortedImages.map((currentObject, index) => {
+//     return (
+//       <div
+//         onClick={() => currentChoose(index)}
+//         className={`flex flex-col items-center rounded-2xl overflow-hidden bg-stone-300 ${currentObject.orientation === "p" ? "row-span-2" : ""}`}
+//         key={index + currentObject.price + currentObject.name}
+//       >
+//         <span>{currentObject.name}</span>
+//         <img
+//           className="object-cover"
+//           src={currentObject.path}
+//           alt={currentObject.name}
+//           loading="lazy"
+//         />
+//         <span>{currentObject.price} Kč</span>
+//       </div>
+//     );
+//   })}
+// </div>;

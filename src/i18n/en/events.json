@@ -1,0 +1,36 @@
+{
+  "heading": "Overview of News and Events",
+  "readMore": "Read more",
+  "horseBook": {
+    "heading": "Publication of a Horse Book – An Encyclopedia for Children",
+    "creatorName": "Kristýna and Barbora Koubková",
+    "creator": " - by authors",
+    "externalLink": "A book about horses",
+    "imgAlt": "Illustration of a white horse from the book 'About Horses', detailed page artwork",
+    "textParts": [
+      "\"Reading Molecules\" is a project to develop reading skills in early school-age children through leveled reading method. The book sets serve as learning tools for children, educators, and parents. They consist of 20 levels, each gradually increasing in difficulty and vocabulary, offering various treatments and themes including encyclopedias, cookbooks, manuals, picture books or engaging stories.",
+      "The encyclopedia \"About Horses\" contains 16 illustrations of horse breeds accompanied by short texts with characteristic descriptions of each breed. It belongs to the medium difficulty category, i.e. level 9 (approximately suitable for 2nd grade school-age children). It will appeal to children, horse lovers, and readers eager to learn something new about horses, but is primarily suitable for those who need to improve their reading skills thanks to its clear, concise texts accompanied by horse illustrations."
+    ]
+  },
+  "schoolWorkshop": {
+    "heading": "Photo Workshop at Elementary School",
+    "text": "Kristýna led a fun workshop on the basics of photography for middle-grade pupils.",
+    "creatorName": "Barbora Koubková",
+    "creator": " - by authors",
+    "textParts": [
+      "Kristýna led a fun",
+      "workshop on the basics of photography",
+      "for second-grade children",
+      "of elementary school."
+    ]
+  },
+  "exhibitionOpening": {
+    "heading": "Opening of New Gallery Exhibition",
+    "text": "On Friday, a vernissage took place for a new exhibition focused on documentary photography.",
+    "creatorName": "Kristýna Koubková",
+    "creator": " - by authors",
+    "textParts": [
+      "On Friday, the opening of a new exhibition focused on documentary photography took place."
+    ]
+  }
+}

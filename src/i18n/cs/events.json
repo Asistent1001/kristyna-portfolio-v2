@@ -1,0 +1,34 @@
+{
+  "heading": "Přehled novinek a událostí",
+  "readMore": "Číst více",
+  "horseBook": {
+    "heading": "Vydání knihy o koních – encyklopedie pro děti",
+    "creatorName": "Kristýna a Barbora Koubkovy",
+    "creator": " - autorky",
+    "externalLink": "Kniha o koních",
+    "imgAlt": "Ilustrace bílého koně z knihy 'O koních', detailní kresba na stránce",
+    "textParts": [
+      ",,Molekuly čtení'' je projekt pro rozvoj čtení u dětí v raném školním věku prostřednictvím metody úrovňového čtení. Sady knih představují učební pomůcku pro děti, pedagogy, i rodiče. Složeny jsou z 20 úrovní, každá z nich postupně zvyšuje svou náročnost a obsah slov a nabízejí mnoho různých zpracování i témat ať už jde například o encyklopedie, kuchařky, příručky, obrázkové knížky nebo čtivý příběh.",
+      "Encyklopedie ,,O koních\" obsahuje 16 ilustrací plemen koní, které doprovází krátký text s charakteristickým popisem jednotlivých plemen a je zařazena do střední kategorie náročnosti tj. 9. úroveň (odpovídá přibližně dětem ve školním věku 2. třídy). Oblíbí si ji děti, milovníci koní i čtenáři, kteří touží dozvědět se něco nového ze světa koní, ale především je vhodná pro ty, kterým pomůže zlepšit se ve čtení, díky srozumitelnému a krátkému textu doplněný o ilustraci koníka."
+    ]
+  },
+  "schoolWorkshop": {
+    "heading": "Fotoworkshop na základní škole",
+    "creatorName": "Kristýna Koubková",
+    "creator": " - autorky",
+    "textParts": [
+      "Kristýna vedla zábavný",
+      "workshop o základech fotografie",
+      "pro děti druhého stupně",
+      "základní školy."
+    ]
+  },
+  "exhibitionOpening": {
+    "heading": "Vernisáž nové výstavy v galerii",
+    "creatorName": "Kristýna Koubková",
+    "creator": " - autorky",
+    "textParts": [
+      "V pátek se uskutečnila vernisáž nové výstavy zaměřené na dokumentární fotografii."
+    ]
+  }
+}

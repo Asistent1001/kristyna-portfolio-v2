@@ -1,0 +1,46 @@
+{
+  "about": {
+    "heading": "O MNĚ",
+    "partText": "Absolventka multimediální tvorby",
+    "text": " — rozmanité zaměření, kde naleznete mnoho z mých prací tvořených originálně a s láskou. Do mé tvorby patří fotografie, návrhy ve 2D i 3D, video a další. Největší nadšení mám pro fotografii, jež mne provází již od dětství. Stejně se také věnuji kresbě, ráda sleduji filmy a vždy jsem toužila zjistit, jak takový film a jeho propagační tvorba vzniká."
+  },
+  "skills": {
+    "heading": "DOVEDNOSTI A ZÁLIBY",
+    "partText": "Mám zkušenosti s grafickými programy: Adobe Photoshop, Adobe Illustrator, Premiere Pro a Cinema 4D. ",
+    "text": "Mou snahou je u jakéhokoliv projektu propracovat každý detail a dát si záležet na výsledku. Vždy se vše snažím dotáhnout až do konce a mezi mé koníčky patří hra beach volejbalu, čtení, filmy a také čas strávený v přírodě i mezi zvířaty."
+  },
+  "goals": {
+    "heading": "CÍLE",
+    "text": "Ráda bych se uplatnila v oboru multimediální tvorby a dosáhla profese např. v oblasti filmové, reklamní nebo grafické agentury. Chtěla bych získat nové zkušenosti, které mi pomohou posunout se dál v tomto oboru a v budoucnu své dovednosti rozšířit ve směru 2D a 3D grafiky, natáčení, designu nebo animace."
+  },
+  "awards": {
+    "awardedPhoto": "Oceněná fotografie na",
+    "heading": "ÚČAST A OCENĚNÍ",
+    "decagon": {
+      "category": "Mezinárodní fotografická soutěž",
+      "position": "Výběr v kategorii: Bizarní a neobvyklé"
+    },
+    "urban": {
+      "category": "Mezinárodní fotografická soutěž",
+      "position": "Vítěz v kategorii \"Youth Award\" - Wildlife in the city"
+    },
+    "openHouse": {
+      "category": "Fotografická soutěž (ČR)",
+      "position": "3. umístění v kategorii Lidé: město a přístupnost"
+    },
+    "picture": {
+      "category": "Mezinárodní fotografická soutěž",
+      "position": "Umístění mezi nejlepších 10 vítězů v kategorii Místa"
+    },
+    "dit4ll": {
+      "category": "Mezinárodní studentská soutěž",
+      "position": "Spoluúčast"
+    }
+  },
+  "courses": {
+    "heading": "Vzdělávací a naučné kurzy",
+    "workcamp": {
+      "location": "Portugalsko"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "heading": "Zásady ochrany osobních údajů",
+  "text": "Kristýna Koubková věnuje zvláštní pozornost ochraně vašich osobních údajů. Tyto zásady vysvětlují, jaké údaje shromažďujeme prostřednictvím tohoto webu, jak s nimi nakládáme a jaká jsou vaše práva. Zpracování údajů je v souladu s Obecným nařízením o ochraně osobních údajů (GDPR) a dalšími platnými předpisy.",
+  "email": "Email: kristyna04@post.cz",
+  "toSave": {
+    "heading": "1. Jaké údaje shromažďujeme?",
+    "name": "Jméno a příjmení.",
+    "email": "Emailová adresa.",
+    "message": "Obsah zprávy zaslané prostřednictvím kontaktního formuláře."
+  },
+  "usage": {
+    "heading": "2. K čemu údaje používáme?",
+    "text": "Vaše údaje používáme výhradně k vyřízení vašeho dotazu nebo zprávy, kterou nám zašlete přes kontaktní formulář. Zpracování je založeno na vašem souhlasu, který udělujete odesláním formuláře. Tento souhlas můžete kdykoli odvolat."
+  },
+  "retention": {
+    "heading": "3. Uchovávání údajů",
+    "text": "Vaše údaje neukládáme na našich serverech. Používáme službu EmailJS k odesílání zpráv, která uchovává data po dobu 30 dnů pro aktivní účty a okamžitě smaže data při zrušení účtu. Podrobnosti o zásadách uchovávání dat služby EmailJS naleznete na "
+  },
+  "sharing": {
+    "heading": "4. Sdílení údajů",
+    "text": "Vaše údaje nejsou sdíleny s žádnou třetí stranou. K odesílání zpráv využíváme službu EmailJS, která působí jako zpracovatel údajů a zajišťuje jejich bezpečnost v souladu s platnými předpisy. Více informací o ochraně údajů EmailJS naleznete na "
+  },
+  "rights": {
+    "heading": "5. Vaše práva",
+    "access": "Na přístup k vašim osobním údajům",
+    "correction": "Na jejich opravu nebo vymazání",
+    "restriction": "Na omezení zpracování",
+    "portability": "Na přenositelnost údajů",
+    "objection": "Vznést námitku proti zpracování",
+    "complaint": "Podat stížnost u Úřadu pro ochranu osobních údajů",
+    "contact": "Pro uplatnění těchto práv nás kontaktujte."
+  },
+  "security": {
+    "heading": "6. Bezpečnost údajů",
+    "text": "Přijímáme přiměřená technická a organizační opatření k ochraně vašich osobních údajů. Data přenášená prostřednictvím služby EmailJS jsou chráněna šifrováním (SSL/TLS)."
+  },
+  "changes": {
+    "heading": "7. Změny v zásadách",
+    "text": "Tyto zásady mohou být aktualizovány. Změny nabývají účinnosti okamžikem jejich zveřejnění na tomto webu. O změnách vás budeme informovat prostřednictvím tohoto webu."
+  },
+  "contact": {
+    "heading": "8. Kontakt",
+    "text": "V případě dotazů ohledně zpracování osobních údajů nás kontaktujte."
+  }
+}
