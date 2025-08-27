@@ -6,7 +6,7 @@ A complete redesign of a personal portfolio website for a photographer. Built wi
 
 ## 🚀 Live Demo
 
-<a href="https://kristyna-portfolio-v2.vercel.app/" target="_blank" rel="noopener noreferrer">View the live website here</a>
+[View the live website here ↗](https://kristyna-portfolio-v2.vercel.app/)
 
 ## 🛠️ Tech Stack
 
