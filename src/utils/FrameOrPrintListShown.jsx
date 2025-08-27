@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function FrameOrPrintListSHown({ listToShow }) {
+export default function FrameOrPrintListShown({ listToShow }) {
   return (
     <ul className="flex justify-between items-center">
       {Object.entries(listToShow).map(([key, value], index) => (

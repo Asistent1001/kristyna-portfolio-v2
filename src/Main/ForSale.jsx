@@ -4,11 +4,11 @@ import { useTranslation } from "react-i18next";
 import { imagesForSaleImport } from "../utils/imagesData";
 
 import ArrowIcon from "../utils/ArrowIcon";
-import FrameOrPrintListSHown from "../utils/FrameOrPrintListSHown";
+import FrameOrPrintListShown from "../utils/FrameOrPrintListShown.jsx";
 import PopupFilter from "../utils/PopupFilter";
 import PopupList from "../utils/PopupList";
 
-import FrameExample from "../assets/ForSale/InfoPhotos/frame.jpg";
+import FrameExample from "../assets/forSale/InfoPhotos/frame.jpg";
 import Carousel from "./Carousel";
 import Pagination from "./Pagination.jsx";
 import { useWindowWidth } from "../utils/useWindowWidth.jsx";
@@ -178,7 +178,7 @@ export default function ForSale() {
               </div>
             </div>
             <div className="hidden lg:block">
-              <FrameOrPrintListSHown listToShow={printList} />
+              <FrameOrPrintListShown listToShow={printList} />
             </div>
           </div>
           <div className="flex flex-col gap-5 pb-3 mt-8">
@@ -221,7 +221,7 @@ export default function ForSale() {
               </div>
             </div>
             <div className="hidden lg:block">
-              <FrameOrPrintListSHown listToShow={frameList} />
+              <FrameOrPrintListShown listToShow={frameList} />
             </div>
           </div>
         </div>
