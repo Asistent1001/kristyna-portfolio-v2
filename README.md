@@ -2,11 +2,11 @@
 
 A complete redesign of a personal portfolio website for [Profession, e.g., a photographer/artist/designer]. Built with a modern React stack, it features a responsive design, smooth animations, multi-language support, and a functional contact form.
 
-![Website Preview](https://via.placeholder.com/800x400?text=Preview+or+GIF+of+the+Website) <!-- Замени на реальный скриншот или GIF -->
+![Website Preview](./images/screenshot.png)
 
 ## 🚀 Live Demo
 
-[View the live website here](https://your-deployed-link.com) <!-- Обязательно добавь ссылку на работающий сайт! -->
+[View the live website here](https://kristyna-portfolio-v2.vercel.app/)
 
 ## 🛠️ Tech Stack
 
