@@ -1,12 +1,12 @@
 # Portfolio Website Redesign for Kristyna
 
-A complete redesign of a personal portfolio website for [Profession, e.g., a photographer/artist/designer]. Built with a modern React stack, it features a responsive design, smooth animations, multi-language support, and a functional contact form.
+A complete redesign of a personal portfolio website for a photographer. Built with a modern React stack, it features a responsive design, smooth animations, multi-language support, and a functional contact form.
 
 ![Website Preview](./images/screenshot.png)
 
 ## 🚀 Live Demo
 
-[View the live website here](https://kristyna-portfolio-v2.vercel.app/)
+<a href="https://kristyna-portfolio-v2.vercel.app/" target="_blank" rel="noopener noreferrer">View the live website here</a>
 
 ## 🛠️ Tech Stack
 
